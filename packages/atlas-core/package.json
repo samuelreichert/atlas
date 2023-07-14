@@ -6,7 +6,7 @@
   "copyright": "© Mendix Technology BV 2022. All rights reserved.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mendix/atlas.git"
+    "url": "https://github.com/samuelreichert/atlas.git"
   },
   "marketplace": {
     "minimumMXVersion": "9.24.0.2965",
