@@ -18,26 +18,27 @@ main().catch(e => {
 });
 
 async function main() {
-    const pkgPath = join(process.cwd(), "package.json");
-    const {
-        name,
-        widgetName,
-        version,
-        marketplace: { minimumMXVersion, marketplaceId }
-    } = require(pkgPath);
+    // const pkgPath = join(process.cwd(), "package.json");
+    // const {
+    //     name,
+    //     widgetName,
+    //     version,
+    //     marketplace: { minimumMXVersion, marketplaceId }
+    // } = require(pkgPath);
 
-    console.log(`Starting release process for tag ${process.env.TAG}`);
+    // console.log(`Starting release process for tag ${process.env.TAG}`);
 
-    const pkgName = name ?? widgetName;
-    if (!pkgName || !version || !minimumMXVersion || !marketplaceId || !version.includes(".")) {
-        throw new Error(`${pkgPath} does not define expected keys.`);
-    }
+    // const pkgName = name ?? widgetName;
+    // if (!pkgName || !version || !minimumMXVersion || !marketplaceId || !version.includes(".")) {
+    //     throw new Error(`${pkgPath} does not define expected keys.`);
+    // }
 
-    if (version.split(".").length !== 3) {
-        throw new Error(`${pkgPath} version is not defined correctly.`);
-    }
+    // if (version.split(".").length !== 3) {
+    //     throw new Error(`${pkgPath} version is not defined correctly.`);
+    // }
 
-    await uploadModuleToAppStore(pkgName, marketplaceId, version, minimumMXVersion);
+    // await uploadModuleToAppStore(pkgName, marketplaceId, version, minimumMXVersion);
+    await getGithubAssetUrl()
 }
 
 async function uploadModuleToAppStore(pkgName, marketplaceId, version, minimumMXVersion) {
