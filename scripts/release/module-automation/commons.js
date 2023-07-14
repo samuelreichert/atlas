@@ -207,6 +207,8 @@ async function githubAuthentication(moduleInfo) {
     await execShellCommand(`echo "${process.env.GH_PAT}" | gh auth login --with-token`);
     const output = await execShellCommand(`gh auth status`);
     console.log(output);
+    const remote = await execShellCommand(`git remote -v`);
+    console.log(remote);
 }
 
 async function cloneRepo(githubUrl, localFolder) {
