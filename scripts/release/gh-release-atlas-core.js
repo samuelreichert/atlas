@@ -88,7 +88,7 @@ async function updateTestProject(moduleInfo, testProject, tmp) {
         })
     ]);
 
-    await updateWidgetMpks(tmp, testProject);
+    // await updateWidgetMpks(tmp, testProject);
 
     await execShellCommand(
         `echo ${moduleInfo.version} > themesource/${moduleInfo.moduleFolderNameInModeler}/.version`,
